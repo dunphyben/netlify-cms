@@ -5,6 +5,26 @@ backend:
 media_folder: "assets/uploads"
 
 collections: # A list of collections the CMS should be able to edit
+  - name: shoes
+    label: Shoes
+    folder: "_shoes"
+    slug: "{slug}}"
+    create: true
+    fields:
+      - {label: Title, name: title, widget: string}
+      - {label: Description, name: description, widget: string}
+      - {label: More, name: more, widget: list}
+      - {label: Price, name: price, widget: number}
+      - {label: Sale, name: sale, widget: number}
+      - name: images
+        label: Images
+        widget: list
+        fields:
+          - {label: Image1, name: image1, widget: image}
+          - {label: Image2, name: image2, widget: image}
+          - {label: Image3, name: image3, widget: image}
+
+
   - name: "posts" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Post" # Used in the UI, ie.: "New Post"
     folder: "_posts"
